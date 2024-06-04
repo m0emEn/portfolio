@@ -58,6 +58,25 @@ body {
   --darkblue: #141c27;
   --green: #55e6a5;
   --body: #a2a2a2;
+  --bgColor: #09101a;
+}
+.mainBtn {
+  background-color: var(--green);
+  border: none;
+  font-size: 16px;
+  width: fit-content;
+  font-weight: 500;
+  padding: 20px 35px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s linear 0s;
+}
+.mainBtn:hover {
+  background-color: var(--darkblue);
+  color: #fff;
 }
 p {
   color: var(--body);
@@ -65,13 +84,11 @@ p {
 nav {
   display: flex;
   background-color: var(--darkblue);
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  position: fixed;
   z-index: 10;
-  top: 0;
   left: 10%;
 }
 .brand {
@@ -104,6 +121,7 @@ nav {
   width: 100%;
   background-image: url("./assets/banner.jpg");
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,6 +196,8 @@ nav {
   .bannerDescription {
     width: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   .profilePic img {
     width: 100%;
@@ -348,5 +368,308 @@ nav {
     width: 100%;
     left: 0;
     position: fixed;
+  }
+}
+
+.about {
+  display: flex;
+  background-color: #000;
+  color: #fff;
+  padding: 5rem;
+  justify-content: space-between;
+}
+.about .aboutDescription h3 {
+  color: var(--green);
+}
+.about .aboutDescription h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 4rem;
+}
+.about .aboutDescription div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem;
+  margin-left: 102px;
+}
+.about .aboutDescription div p {
+  width: 100%;
+  max-width: 417px;
+  position: relative;
+}
+.about .aboutDescription div p::after {
+  position: absolute;
+  content: "";
+  left: -150px;
+  top: 0;
+  width: 102px;
+  height: 2px;
+  background-color: var(--body);
+}
+.about .pic {
+  position: relative;
+  z-index: 1;
+  height: 475px;
+  width: 395px;
+  right: 50px;
+}
+.about .pic img {
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.about .pic::after {
+  position: absolute;
+  content: "";
+  top: -20px;
+  right: -20px;
+  background-color: var(--green);
+  height: 85%;
+  width: 95%;
+  z-index: 1;
+}
+@media screen and (max-width: 1300px) {
+  .about .pic {
+    right: initial;
+  }
+}
+@media screen and (max-width: 1248px) {
+  .about .pic {
+    width: fit-content;
+    height: fit-content;
+  }
+  .about .pic::after {
+    top: -15px;
+    right: -15px;
+    height: 85%;
+    width: 95%;
+  }
+  .about .aboutDescription h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .about .aboutDescription h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+  }
+}
+@media screen and (max-width: 932px) {
+  .about {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5rem 2rem;
+  }
+  .about .aboutDescription div {
+    padding: 3rem 0;
+    margin-left: 0;
+    align-items: center;
+  }
+  .about .pic {
+    display: none;
+  }
+  .about .aboutDescription h1 {
+    line-height: 2.9rem;
+  }
+  .about .aboutDescription div p::after {
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .about .aboutDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about .aboutDescription h1 {
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  .about .aboutDescription h3 {
+    font-size: 1.2rem;
+    line-height: 3rem;
+  }
+}
+@media screen and (max-width: 496px) {
+  .about .aboutDescription h1 {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+  .about .aboutDescription h3 {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .about .aboutDescription div p {
+    font-size: 14px;
+  }
+  .about {
+    padding: 5rem 1rem;
+  }
+}
+
+.contact {
+  background-color: #000;
+  padding: 5rem;
+  display: flex;
+  gap: 1rem;
+}
+.contact div {
+  width: 50%;
+}
+
+.contact .description {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.contact .description .title {
+  color: #fff;
+  width: 100%;
+}
+.contact .description .title h1 {
+  font-size: 122px;
+  font-weight: 600;
+  line-height: 4.8rem;
+}
+.contact .description .title h1 span {
+  font-size: 58px;
+}
+.contact .description .stats {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.contact .description .stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 28px 0;
+  gap: 2rem;
+  flex-direction: column;
+  background-color: var(--bgColor);
+  width: 50%;
+}
+.contact .description .stats .stat img {
+  width: 100px;
+}
+.contact .description .stats .stat h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.8rem;
+  position: relative;
+  top: 16px;
+}
+.contact .description .stats .stat p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.contact .contactForm {
+  background-color: var(--bgColor);
+  padding: 3.5rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact .contactForm h1 {
+  font-size: 2.7rem;
+  font-weight: 600;
+}
+.contact .contactForm input,
+.contact .contactForm textarea {
+  width: 100%;
+  resize: none;
+  padding: 22px 20px;
+  background-color: transparent;
+  border: 1px solid var(--green);
+  font-size: 16px;
+  outline: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1076px) {
+  .contact {
+    flex-direction: column;
+  }
+  .contact .description {
+    width: 100%;
+  }
+  .contact .contactForm {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 612px) {
+  .contact {
+    padding: 5rem 1rem;
+  }
+  .contact .description .title h1 {
+    font-size: 104px;
+  }
+  .contact .contactForm {
+    padding: 2.5rem;
+  }
+}
+@media screen and (max-width: 486px) {
+  .contact,
+  .about {
+    padding: 0rem 1rem;
+  }
+  .contact .description {
+    gap: 1rem;
+  }
+  .contact .description .title h1 {
+    font-size: 84px;
+    line-height: 2.8rem;
+  }
+  .contact .description .title h1 span {
+    font-size: 38px;
+  }
+  .contact .description p {
+    font-size: 14px;
+  }
+  .contact .contactForm {
+    padding: 1rem;
+  }
+  .contact .description .stats .stat h4 {
+    font-size: 32px;
+    line-height: 1rem;
+  }
+  .contact .description .stats .stat p {
+    font-size: 16px;
+    text-align: center;
+  }
+  .contact .description .stats .stat img {
+    width: 70px;
+  }
+  .contact .contactForm {
+    gap: 1rem;
+  }
+  .contact .contactForm h1 {
+    font-size: 2rem;
+  }
+  .contact .contactForm p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 422px) {
+  .contact .description .title h1 {
+    font-size: 64px;
+    line-height: 1.7rem;
+  }
+  .contact .description .title h1 span {
+    font-size: 28px;
   }
 }

@@ -13,7 +13,7 @@ const Services = () => {
       </div>
       <div className="serviceCards">
         <div className="card">
-          <img src={web} />
+          <img src={web} alt="img" />
           <h3>WEBSITE DESIGN</h3>
           <p>
             Nemo design enim ipsam voluptatem quim voluptas sit aspernatur aut
@@ -22,7 +22,7 @@ const Services = () => {
           </p>
         </div>
         <div className="card">
-          <img src={diam} />
+          <img src={diam} alt="img" />
           <h3>LOGO DESIGN</h3>
           <p>
             Nemo design enim ipsam voluptatem quim voluptas sit aspernatur aut
@@ -31,7 +31,7 @@ const Services = () => {
           </p>
         </div>
         <div className="card">
-          <img src={time} />
+          <img src={time} alt="img" />
           <h3>WEBSITE DEVELOPMENT</h3>
           <p>
             Nemo design enim ipsam voluptatem quim voluptas sit aspernatur aut

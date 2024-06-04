@@ -1,8 +1,6 @@
 import React from "react";
-import { useState } from "react";
 import logo from "../assets/logo.png";
 const Navbar = ({ onMouseEnter, onMouseLeave }) => {
-  const [currentView, setCurrentView] = useState("home");
   return (
     <nav>
       <div className="brand">

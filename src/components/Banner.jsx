@@ -1,5 +1,6 @@
 import pfp from "../assets/pfp.png";
 import { TypeAnimation } from "react-type-animation";
+import { HiDownload } from "react-icons/hi";
 
 const Banner = () => {
   return (
@@ -32,9 +33,12 @@ const Banner = () => {
           principles and a keen eye for detail, I specialize in translating
           complex ideas into user-friendly interfaces that captivate and engage.
         </p>
+        <button className="mainBtn">
+          Download CV <HiDownload />
+        </button>
       </div>
       <div className="profilePic">
-        <img src={pfp} />
+        <img src={pfp} alt="img" />
       </div>
     </div>
   );

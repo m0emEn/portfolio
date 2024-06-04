@@ -7,7 +7,8 @@ import ScrollTracker from "./components/ScrollTracker";
 import ScrollTrackerMobile from "./components/ScrollTrackerMobile";
 import Services from "./components/Services";
 import useMouse from "@react-hook/mouse-position";
-import { motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import Contact from "./components/Contact";
 
 function App() {
   const ref = React.useRef(null);
@@ -18,7 +19,7 @@ function App() {
     leaveDelay: 100,
   });
 
-  let mouseXPosition = 0;
+  let mouseXPosition = -35;
   let mouseYPosition = 0;
 
   if (mouse.x !== null) {
@@ -82,6 +83,7 @@ function App() {
       <Banner />
       <Services />
       <About />
+      <Contact />
       <ScrollTrackerMobile />
       <ScrollTracker />
     </div>
