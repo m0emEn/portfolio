@@ -9,6 +9,8 @@ import Services from "./components/Services";
 import useMouse from "@react-hook/mouse-position";
 import { motion } from "framer-motion";
 import Contact from "./components/Contact";
+import Skills from "./components/Skills";
+import Footer from "./components/Footer";
 
 function App() {
   const ref = React.useRef(null);
@@ -84,6 +86,8 @@ function App() {
       <Services />
       <About />
       <Contact />
+      <Skills />
+      <Footer />
       <ScrollTrackerMobile />
       <ScrollTracker />
     </div>

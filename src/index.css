@@ -208,7 +208,8 @@ nav {
   }
 }
 
-.services {
+.services,
+.skills {
   background-color: #000;
   color: #fff;
   display: flex;
@@ -272,12 +273,14 @@ nav {
   .titles h1 {
     line-height: 2rem;
   }
-  .services {
+  .services,
+  .skills {
     padding: 5rem 3rem;
   }
 }
 @media screen and (max-width: 500px) {
-  .services {
+  .services,
+  .skills {
     padding: 5rem 1rem;
   }
 }
@@ -671,5 +674,101 @@ nav {
   }
   .contact .description .title h1 span {
     font-size: 28px;
+  }
+}
+
+.skills {
+  background-color: var(--bgColor);
+}
+.skill-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.skill-item {
+  color: white;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  background-color: var(--darkblue);
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.skill-item::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 5px;
+  background-color: #4caf50;
+  width: 0; /* default width */
+  transition: width 0.3s;
+}
+.skill-item p {
+  color: #fff;
+}
+.skill-bar {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 5px;
+  background-color: var(--green);
+  transition: width 0.3s;
+  border-radius: 2px;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  .skill-container {
+    grid-template-columns: 1fr;
+  }
+}
+footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+footer .brand h3 {
+  gap: 12px;
+  text-transform: capitalize;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .brand img {
+  filter: invert(1) brightness(2);
+  background-color: transparent;
+}
+@media (max-width: 768px) {
+  footer .brand {
+    gap: 0.1rem;
+  }
+  footer .brand h3 {
+    font-size: 1.2rem; /* Smaller font size for medium screens */
+  }
+  footer .brand img {
+    width: 62px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .brand {
+    width: 100%;
+    flex-direction: column;
+  }
+  footer .brand h3 {
+    display: block;
+    text-align: center;
+    font-size: 1rem; /* Even smaller font size for small screens */
+  }
+  footer .brand img {
+    width: 52px;
   }
 }

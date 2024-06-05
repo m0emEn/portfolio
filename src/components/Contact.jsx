@@ -19,12 +19,12 @@ const Contact = () => {
         </p>
         <div className="stats">
           <div className="stat">
-            <img src={project} />
+            <img src={project} alt="" />
             <h4 className="statCounter">35+</h4>
             <p>Complete Projects</p>
           </div>
           <div className="stat">
-            <img src={client} />
+            <img src={client} alt="" />
             <h4 className="statCounter">24+</h4>
             <p>Client Review</p>
           </div>
