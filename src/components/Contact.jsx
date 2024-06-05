@@ -1,7 +1,27 @@
 import project from "../assets/project.svg";
 import client from "../assets/client.svg";
+import React, { useEffect } from "react";
+import { useAnimation, motion, delay } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 const Contact = () => {
+  const variants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      skewY: 0,
+      transition: { duration: 1, delay: 0.2 },
+    },
+    hidden: { opacity: 0, y: 20, skewY: 1 },
+  };
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <div className="contact">
       <div className="description">
@@ -20,18 +40,29 @@ const Contact = () => {
         <div className="stats">
           <div className="stat">
             <img src={project} alt="" />
-            <h4 className="statCounter">35+</h4>
+            <h4 className="statCounter">
+              <CountUp end={35} enableScrollSpy={true} />+
+            </h4>
             <p>Complete Projects</p>
           </div>
           <div className="stat">
             <img src={client} alt="" />
-            <h4 className="statCounter">24+</h4>
+            <h4 className="statCounter">
+              <CountUp end={24} enableScrollSpy={true} />+
+            </h4>
             <p>Client Review</p>
           </div>
         </div>
       </div>
       <div className="contactForm">
-        <h1>GET IN TOUCHE</h1>
+        <motion.h1
+          ref={ref}
+          animate={controls}
+          initial="hidden"
+          variants={variants}
+        >
+          GET IN TOUCHE
+        </motion.h1>
         <p>
           Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
           auting fugit sed thisnquia consequuntur magni dolores eos designer

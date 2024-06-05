@@ -72,6 +72,7 @@ function App() {
   function navbarLeave(event) {
     setCursorVariant("default");
   }
+
   return (
     <div ref={ref}>
       <motion.div
@@ -89,7 +90,6 @@ function App() {
       <Skills />
       <Footer />
       <ScrollTrackerMobile />
-      <ScrollTracker />
     </div>
   );
 }

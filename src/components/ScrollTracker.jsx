@@ -12,8 +12,8 @@ const ScrollTracker = () => {
         document.documentElement.clientHeight;
       const scrolled = (winScroll / height) * 100;
       document.getElementById("over").style.height = scrolled + "%";
-      let currentScrollLevel = Math.ceil(scrolled / 33.33);
-      currentScrollLevel = Math.min(currentScrollLevel, 3);
+      let currentScrollLevel = Math.ceil(scrolled / 20);
+      currentScrollLevel = Math.min(currentScrollLevel, 5);
 
       setScrollLevel(currentScrollLevel);
     };
@@ -39,6 +39,16 @@ const ScrollTracker = () => {
         className={`scrollLevel ${scrollLevel >= 3 ? "scrollLevelFill" : ""}`}
       >
         3
+      </div>
+      <div
+        className={`scrollLevel ${scrollLevel >= 4 ? "scrollLevelFill" : ""}`}
+      >
+        4
+      </div>
+      <div
+        className={`scrollLevel ${scrollLevel >= 5 ? "scrollLevelFill" : ""}`}
+      >
+        5
       </div>
       <div className="line"></div>
       <div className="over" id="over"></div>

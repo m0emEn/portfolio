@@ -1,11 +1,30 @@
 import pfp from "../assets/pfp.png";
 import { TypeAnimation } from "react-type-animation";
 import { HiDownload } from "react-icons/hi";
-
+import React, { useState, useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const Banner = () => {
+  const variants = {
+    visible: { opacity: 1, x: 0, transition: { duration: 2 } },
+    hidden: { opacity: 0, x: -20 },
+  };
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <div className="banner">
-      <div className="bannerDescription">
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial="hidden"
+        variants={variants}
+        className="bannerDescription"
+      >
         <h1>
           HI, I'M MOEMEN!
           <br />
@@ -36,7 +55,8 @@ const Banner = () => {
         <button className="mainBtn">
           Download CV <HiDownload />
         </button>
-      </div>
+      </motion.div>
+
       <div className="profilePic">
         <img src={pfp} alt="img" />
       </div>
