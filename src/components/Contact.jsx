@@ -1,7 +1,7 @@
 import project from "../assets/project.svg";
 import client from "../assets/client.svg";
 import React, { useEffect } from "react";
-import { useAnimation, motion, delay } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 

@@ -1,7 +1,7 @@
 import pfp from "../assets/pfp.png";
 import { TypeAnimation } from "react-type-animation";
 import { HiDownload } from "react-icons/hi";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const Banner = () => {

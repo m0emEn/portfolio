@@ -90,6 +90,7 @@ function App() {
       <Skills />
       <Footer />
       <ScrollTrackerMobile />
+      <ScrollTracker />
     </div>
   );
 }

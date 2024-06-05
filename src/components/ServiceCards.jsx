@@ -20,11 +20,11 @@ const ServiceCards = () => {
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
-
   useEffect(() => {
     if (inView) {
       controls.start((i) => variants.visible(i));
     }
+    // eslint-disable-next-line
   }, [controls, inView]);
 
   return (
